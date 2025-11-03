@@ -1,0 +1,16 @@
+---
+layout: base
+title: Home
+---
+<h1>Everyday Carry</h1>
+<p class="muted">Three things I never leave home without.</p>
+<div class="grid">
+  {% for item in collections.things | sort(attribute='data.title') %}
+    <a class="card" href="{{ item.url }}">
+      <span class="badge">EDC</span>
+      <h2>{{ item.data.title }}</h2>
+      {% if item.data.image %}<img class="figure" src="{{ item.data.image }}" alt="{{ item.data.title }}">{% endif %}
+      <p>{{ item.data.why }}</p>
+    </a>
+  {% endfor %}
+</div>
