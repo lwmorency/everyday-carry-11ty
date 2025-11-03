@@ -1,13 +1,30 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ title ? (title + " • ") : "" }}Everyday Carry</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
-</head><body>
-<header class="site-header">
-  <a class="brand" href="/">Everyday Carry</a>
-  <nav class="nav"><a href="/">Home</a><a href="/things/phone/">Phone</a><a href="/things/wallet/">Wallet</a><a href="/things/keys/">Keys</a></nav>
-</header>
-<main class="container">{{ content | safe }}</main>
-<footer class="site-footer"><p>© Built with 11ty</p></footer>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% if title %}{{ title }} • {% endif %}Everyday Carry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Everyday Carry</a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/things/phone/">Phone</a>
+      <a href="/things/wallet/">Wallet</a>
+      <a href="/things/keys/">Keys</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p>© Built with 11ty</p>
+  </footer>
+</body>
+</html>
